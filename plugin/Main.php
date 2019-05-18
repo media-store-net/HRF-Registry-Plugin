@@ -1,6 +1,6 @@
 <?php
 
-namespace WPW\plugin;
+namespace hrf\plugin;
 
 use Amostajo\WPPluginCore\Plugin;
 

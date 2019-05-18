@@ -1,5 +1,5 @@
 {
-  "name": "hrf/hrf-registry-plugin",
+  "name": "hrf-registry-plugin",
   "description": "Kundenspezifischer Registrierungsablauf der User und Zugang zum geschützten Bereich einer Homepage.",
   "license": "MIT",
   "keywords": [

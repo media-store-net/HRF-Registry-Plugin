@@ -6,11 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'hrf\\' => array($baseDir . '/'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'WPMVC\\Commands\\' => array($vendorDir . '/10quality/wpmvc-commands/src'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PHPFastCache\\' => array($vendorDir . '/amostajo/phpfastcache/src/psr4'),
     'MediaStoreNet\\WpRestRegistration\\' => array($vendorDir . '/media-store-net/wp-rest-registration/src'),
