@@ -1,30 +1,27 @@
-# WORDPRESS PLUGIN TEMPLATE - Originale Readme
+# HRF Registry Plugin
 
-The power of **Composer** and **MVC** in your **Wordpress** plugins.
+##Description
 
-**Wordpress Plugin** (WPP) is a development template that can be used to create modern and elegant plugins. WPP comes with [Composer](https://getcomposer.org/) and [Lightweight MVC](https://github.com/amostajo/lightweight-mvc) framework.
+**Funktionaler Ablauf:**
 
-[![Video tutorial header](http://s10.postimg.org/njeae0ogp/Videotutorialheader.jpg)](http://youtu.be/fXPNMH8vaMI)
+Ein **Registrierungsformular** steht in einem **Shortcode** zur Verfügung und kann somit auf einer beliebigen Seite von Wordpress eingebunden werden.
+- Wenn ein User das Formular ausgefüllt und abgeschickt hat, wird im ersten Schritt eine Bestätigungsmail für den Kunden generiert, 
+in der er als Inhaber seiner Email-Adresse identifiziert wird. **(double-opt-in)**
+- Ist die Inhaberschaft des Users bestätigt, wird eine zweite Email generiert die an den Administrator geht, dieser hat als erstes
+die Einsicht in die Daten des Kunden und 2 Links um den User freizuschalten oder abzulehnen.
+- Wird der User seitens Administrator freigeschaltet, wird der User im System angelegt und bekommt eine Email mit seinen Zugangsdaten.
+- Wird der User abgelehnt, werden alle erfassten Daten des Users aus DB gelöscht und der User bekommt eine Email mit den Kontaktdaten zur direkten Kontaktaufnahme.
+- Der geschützte Bereich für die User kann sowohl als Zusatzplugin oder Page Template realisiert werden.
 
-**NOTE:** Need to create a theme? Use [Wordpress THEME template](https://github.com/amostajo/wordpress-theme) instead.
-
-- [Requirements](#requirements)
-- [How to use](#how-to-use)
-- [Change Log](#change-log)
-- [Coding Guidelines](#coding-guidelines)
-- [License](#license)
 
 ## Requirements
 
 * PHP >= 5.4.0
 
-## How to use
-
-Please visit the [documentation](http://wordpress-dev.evopiru.com/documentation/) web site to see how to use this template framework.
-
 ## Change Log
 
-For version upgrades and change log, click [here](https://github.com/amostajo/wordpress-plugin/releases).
+- v1.0 Initial Commit 
+
 
 ## Coding Guidelines
 
