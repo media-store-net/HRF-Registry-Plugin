@@ -44,6 +44,7 @@ class Main extends Plugin {
 		/**
 		 * SHORTCODES
 		 */
+		$this->add_shortcode( 'hrf_registry_form', 'shortcodes\RegistryForm@registryForm' );
 	}
 
 	/**
@@ -55,5 +56,12 @@ class Main extends Plugin {
 
 		// Add Admin Menus
 		$this->add_action( 'admin_menu', 'admin\AdminPagesController@menus' );
+
+		// Add Styles and Scripts for Admin Pages
+		$this->add_action( 'admin_enqueue_scripts', 'StylesController@set_admin_styles' );
+
+		// StoreOptions
+		$this->add_action( 'admin_init', 'ActionController@StoreAdminOptions' );
+
 	}
 }

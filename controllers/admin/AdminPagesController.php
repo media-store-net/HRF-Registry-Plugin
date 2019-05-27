@@ -10,6 +10,7 @@ namespace hrf\controllers\admin;
 
 
 use hrf\controllers\AbstractController;
+use hrf\core\Container;
 
 /**
  * Class AdminPagesController
@@ -42,7 +43,13 @@ class AdminPagesController extends AbstractController {
 	 *   you find it in "views/admin/pages/dashboard.php"
 	 */
 	public function dashboard() {
-		$this->view->show( 'admin.pages.dashboard', [] );
+		/**
+		 * @var $optionsController \hrf\controllers\OptionsController
+		 */
+		$optionsController = ( Container::getContainer() )->make( 'OptionsController' );
+		$options           = $optionsController->getAll();
+
+		$this->view->show( 'admin.pages.dashboard', [ 'options' => $options ] );
 	}
 
 }

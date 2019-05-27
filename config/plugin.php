@@ -68,6 +68,10 @@ return [
 			'subject' => '',
 			'body'    => ''
 		],
+		'msg4'         => [
+			'subject' => '',
+			'body'    => ''
+		],
 	],
 
 ];

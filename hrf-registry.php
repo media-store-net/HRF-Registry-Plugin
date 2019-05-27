@@ -27,6 +27,7 @@ Author URI: https://media-store.net
 
 $langName = 'hrf';
 define( 'HRF_DIR', plugin_dir_path( __FILE__ ) );
+define( 'HRF_VERSION', 1.0 );
 
 require_once( HRF_DIR . 'boot/bootstrap.php' );
 

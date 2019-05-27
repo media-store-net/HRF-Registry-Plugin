@@ -9,6 +9,7 @@
 namespace hrf\controllers;
 
 use Amostajo\LightweightMVC\Controller;
+use hrf\core\Container;
 
 /**
  * Class AbstractController
@@ -39,7 +40,7 @@ class AbstractController extends Controller {
 	public function __construct() {
 		$config = include( HRF_DIR . 'config/plugin.php' );
 		parent::__construct( $config['paths']['views'] );
-		$hrfContainer = new \hrf\core\Container();
+		$hrfContainer = Container::getContainer();
 
 		$this->view = $hrfContainer->make( 'View' );
 		$this->user = $hrfContainer->make( 'currentUser' );

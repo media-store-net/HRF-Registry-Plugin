@@ -9,6 +9,7 @@
 namespace hrf\core;
 
 
+use hrf\controllers\admin\Placeholders;
 use hrf\controllers\LanguageController;
 use hrf\controllers\OptionsController;
 use hrf\controllers\PostTypeController;
@@ -19,7 +20,7 @@ use hrf\plugin\Models\PostTypeModel;
 
 class Container {
 
-	private $selfInstance;
+	private static $selfInstance;
 
 	private $config;
 
@@ -27,16 +28,21 @@ class Container {
 
 	private $instances = [];
 
+	public static function getContainer() {
+		// Initialize the service if it's not already set.
+		if ( self::$selfInstance === null ) {
+			self::$selfInstance = new Container();
+		}
+
+		// Return the instance.
+		return self::$selfInstance;
+	}
+
 	public function __construct() {
 
 		global $config;
 		$this->config  = $config;
 		$this->aliases = $this->getObjectAliases();
-
-		if ( ! $this->selfInstance ):
-			return $this->selfInstance;
-		endif;
-		$this->selfInstance = true;
 
 	}
 
@@ -77,6 +83,9 @@ class Container {
 			},
 			'PostTypeController' => function () {
 				return new PostTypeController();
+			},
+			'Placeholders'       => function () {
+				return new Placeholders();
 			},
 			'currentUser'        => function () {
 				if ( ! function_exists( 'wp_get_current_user' ) ) {
